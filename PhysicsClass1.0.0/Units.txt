@@ -1,0 +1,57 @@
+###
+combine the UnitClassV2 with a physics function defintion class to compute math and output values
+###
+
+Base Units
+
+
+length = m
+mass = g
+seconds = s
+ampere = A 
+candela = cd 
+temperature = K
+mole = mol 
+
+
+Kinematic Units
+
+
+velocity  = m / s
+acceleration m / s**2
+force = kg * m / s**2
+joule = N * m
+newtown metre = N * m
+pascal = N / m**2
+hertz = s^-1 Hz
+watt = W J/s
+
+
+Space Units
+
+
+area = m**2
+volume = m**3
+specific_volume m**3 / kg
+(mass density) density = kg / m**3
+
+
+Electric Units
+
+
+current density = A/m^2
+magnetic field strength = A/m
+coulomb = C s * A 
+
+
+Substance Units
+
+
+amount of substance concentration = mol/m^3
+
+
+Light Units
+
+
+luminance = cd/m^2
+
