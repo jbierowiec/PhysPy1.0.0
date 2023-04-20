@@ -116,6 +116,90 @@ class Formulas:
         else:
             calc = num1 * num2
             return units.force(calc)
+
+    def force_mv2_r(self, v, m, r):
+        if (isinstance(v, str) and isinstance(m, str) and isinstance(r, str)):
+            num1 = re.sub('[^0-9.-]','', v)
+            num2 = re.sub('[^0-9.-]','', m)
+            num3 = re.sub('[^0-9.-]','', r)
+            
+            n1 = float(num1)
+            n2 = float(num2)
+            n3 = float(num3)
+            
+            calc = float(((n1**2) / n3) * n2)
+            return units.force(calc)
+
+        elif (isinstance(v, str) and isinstance(m, str) or isinstance(r, float)):
+            num1 = re.sub('[^0-9.-]','', v)
+            num2 = re.sub('[^0-9.-]','', m)
+            num3 = r
+
+            n1 = float(num1)
+            n2 = float(num2)
+
+            calc = float(((n1**2) / num3) * n2)
+            return units.force(calc)
+
+        elif (isinstance(v, str) and isinstance(r, str) or isinstance(m, float)):
+            num1 = re.sub('[^0-9.-]','', v)
+            num2 = m
+            num3 = re.sub('[^0-9.-]','', r)
+
+            n1 = float(num1)
+            n3 = float(num3)
+            
+            calc = float(((n1**2) / n3) * num2)
+            return units.force(calc)
+        
+        elif (isinstance(v, float) or isinstance(m, str) and isinstance(r, str)):
+            num1 = v
+            num2 = re.sub('[^0-9.-]','', m)
+            num3 = re.sub('[^0-9.-]','', r)
+
+            n2 = float(num2)
+            n3 = float(num3)
+            
+            calc = float(((num1**2) / n3) * n2)
+            return units.force(calc)
+        
+        elif (isinstance(v, str) or isinstance(m, float) and isinstance(r, float)):
+            num1 = re.sub('[^0-9.-]','', v)
+            num2 = m
+            num3 = r
+
+            n1 = float(num1)
+            
+            calc = float(((n1**2) / num3) * num2)
+            return units.force(calc)
+        
+        elif (isinstance(v, float) and isinstance(r, float) or isinstance(m, str)):
+            num1 = v
+            num2 = re.sub('[^0-9.-]','', m)
+            num3 = r
+
+            n2 = float(num2)
+            
+            calc = float(((num1**2) / num3) * n2)
+            return units.force(calc)
+        
+        elif (isinstance(v, float) and isinstance(m, float) or isinstance(r, str)):
+            num1 = v
+            num2 = m
+            num3 = re.sub('[^0-9.-]','', r)
+
+            n3 = float(num3)
+            
+            calc = float(((num1**2) / n3) * num2)
+            return units.force(calc)
+        
+        else:
+            num1 = v
+            num2 = m
+            num3 = r
+
+            calc = float(((num1**2) / num3) * num2)
+            return units.force(calc)
     
     def force_kqq_r2(self, q1, q2, r, k = constants.ke):
         if (isinstance(q1, str) and isinstance(q2, str) and isinstance(r, str)):
@@ -128,10 +212,8 @@ class Formulas:
             n3 = float(num3)
             n4 = float(num4)
 
-
             calc = (float(num1) * n2 * n3) / (n4**2)
             return units.force(calc)
-
 
         elif (isinstance(q1, str) or isinstance(q2, str) or isinstance(r, float)):
             num1 = k

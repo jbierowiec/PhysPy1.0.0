@@ -57,6 +57,7 @@ plotacc =plots.plot_average_acceleration(v1, v2, t1, t2, xmin, xmax, ymin, ymax)
 force1 = formulas.force_ma(acc, m1)
 force2 = formulas.force_kqq_r2(q1, q2, r)
 force3 = formulas.force_GMm_r2(m1, m2, r)
+force4 = formulas.force_mv2_r(vel, m1, r)
 
 # mass units
 mass = units.mass(m1)
@@ -67,6 +68,7 @@ a = magnitude.convert(acc)
 F = magnitude.convert(force1)
 Fe = magnitude.convert(force2)
 Fg = magnitude.convert(force3)
+Fc = magnitude.convert(force4)
 
 # print statements
 print('The distance is: ' + dist)
@@ -77,3 +79,5 @@ print('The mass is: ' + mass)
 print('The electrostatic force is: ' + Fe)
 print(force3)
 print('The gravitational force is: ' + Fg)
+print('The centripetal force is: ' + Fc)
+print(force4)
